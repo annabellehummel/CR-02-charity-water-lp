@@ -8,6 +8,11 @@
     body {
       margin: 0;
       font-family: 'Proxima Nova', sans-serif;
+      /* Set the background image for the whole page */
+      background-image: url('images/backgroundimage.png');
+      background-size: cover; /* Make the image cover the whole page */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
       background-color: #ffffff;
       color: #ffffff;
     }
@@ -30,29 +35,26 @@
       text-decoration: none;
     }
 
-    .hero {
-      display: flex;
+    section.hero {
+      /* Remove grid and background image for simplicity */
+      display: flex; /* Use flex to align content side by side */
+      flex-wrap: wrap; /* Allow items to wrap on small screens */
       align-items: center;
-      justify-content: space-between;
-      background: url('https://via.placeholder.com/1200x800') no-repeat center center/cover;
+      justify-content: center;
+      /* Remove background image from hero */
+      background: none;
       height: 100vh;
       padding: 2rem;
       box-sizing: border-box;
     }
 
-    .hero-text {
+    section.hero article {
       max-width: 600px;
       font-family: Georgia, serif;
-    }
-
-    .hero-text h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-text p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
+      /* Add a background color with transparency for readability */
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      padding: 1.5rem;
+      border-radius: 10px;
     }
 
     .cta-button {
@@ -66,40 +68,45 @@
       text-decoration: none;
     }
 
-    .hero-image img {
-      max-height: 500px;
-      border-radius: 10px;
-      object-fit: cover;
+    figure {
+      margin: 0;
+      /* Hide the figure since the background image is now on the body */
+      display: none;
     }
 
     @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
+      section.hero {
+        flex-direction: column; /* Stack items on top of each other */
         text-align: center;
       }
 
-      .hero-image {
+      figure {
         margin-top: 2rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- The background image is now set on the body, so no need for an image here -->
   <header>
-    <img src="https://via.placeholder.com/150x30?text=charity:+water" alt="charity: water logo">
+    <!-- Logo image on the left -->
+    <!-- Use the provided cw_logo-2.png file -->
+    <img src="cw_logo-2.png" alt="charity: water logo">
+    <!-- Sign In link on the right -->
     <a class="sign-in" href="#">Sign In</a>
   </header>
 
   <section class="hero">
-    <div class="hero-text">
+    <article>
+      <!-- Main headline and description -->
       <h1>Give Clean Water. See Real Change.</h1>
       <p>100% of your donation funds clean water projects - one click and you'll see exactly where your gift is changing lives.</p>
       <a class="cta-button" href="#">Click now to change a life</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://via.placeholder.com/400x500" alt="Smiling child drinking water">
-    </div>
+    </article>
+    <!-- The image is now set as the page background, so we do not need this figure -->
+    <!-- <figure>
+      <img src="backgroundimage.png" alt="Smiling child drinking water">
+    </figure> -->
   </section>
 </body>
 </html>
-

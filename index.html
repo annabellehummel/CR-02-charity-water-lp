@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>charity: water - Give Clean Water</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      height: 100vh;
       font-family: 'Proxima Nova', sans-serif;
-      /* Set the background image for the whole page */
-      background-image: url('images/backgroundimage.png');
-      background-size: cover; /* Make the image cover the whole page */
-      background-position: center; /* Center the image */
-      background-repeat: no-repeat; /* Do not repeat the image */
+      background-image: url('img/backgroundimage.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       background-color: #ffffff;
       color: #ffffff;
     }
@@ -22,7 +22,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
     header img {
@@ -36,14 +36,11 @@
     }
 
     section.hero {
-      /* Remove grid and background image for simplicity */
-      display: flex; /* Use flex to align content side by side */
-      flex-wrap: wrap; /* Allow items to wrap on small screens */
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      /* Remove background image from hero */
-      background: none;
-      height: 100vh;
+      height: calc(100vh - 80px);
       padding: 2rem;
       box-sizing: border-box;
     }
@@ -51,8 +48,7 @@
     section.hero article {
       max-width: 600px;
       font-family: Georgia, serif;
-      /* Add a background color with transparency for readability */
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      background: rgba(0, 0, 0, 0.5);
       padding: 1.5rem;
       border-radius: 10px;
     }
@@ -68,45 +64,26 @@
       text-decoration: none;
     }
 
-    figure {
-      margin: 0;
-      /* Hide the figure since the background image is now on the body */
-      display: none;
-    }
-
     @media (max-width: 768px) {
       section.hero {
-        flex-direction: column; /* Stack items on top of each other */
+        flex-direction: column;
         text-align: center;
-      }
-
-      figure {
-        margin-top: 2rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- The background image is now set on the body, so no need for an image here -->
   <header>
-    <!-- Logo image on the left -->
-    <!-- Use the provided cw_logo-2.png file -->
-    <img src="cw_logo-2.png" alt="charity: water logo">
-    <!-- Sign In link on the right -->
+    <img src="img/cw_logo-2.png" alt="charity: water logo">
     <a class="sign-in" href="#">Sign In</a>
   </header>
 
   <section class="hero">
     <article>
-      <!-- Main headline and description -->
       <h1>Give Clean Water. See Real Change.</h1>
       <p>100% of your donation funds clean water projects - one click and you'll see exactly where your gift is changing lives.</p>
       <a class="cta-button" href="#">Click now to change a life</a>
     </article>
-    <!-- The image is now set as the page background, so we do not need this figure -->
-    <!-- <figure>
-      <img src="backgroundimage.png" alt="Smiling child drinking water">
-    </figure> -->
   </section>
 </body>
 </html>

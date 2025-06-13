@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>charity: water - Give Clean Water</title>
+
+  <!-- Google Fonts fallback for Proxima Nova -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
     html, body {
       margin: 0;
-      height: 100vh;
-      font-family: 'Proxima Nova', sans-serif;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
       background-image: url('img/backgroundimage.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-color: #ffffff;
       color: #ffffff;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
     }
 
     header {
@@ -23,10 +33,13 @@
       align-items: center;
       padding: 1rem 2rem;
       background-color: rgba(255, 255, 255, 0.8);
+      position: relative;
+      z-index: 2;
     }
 
     header img {
       height: 30px;
+      max-width: 100%;
     }
 
     .sign-in {
@@ -37,34 +50,38 @@
 
     section.hero {
       display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start; /* Align items to the top */
-      justify-content: flex-start; /* Align items to the left */
-      height: calc(100vh - 80px);
+      align-items: flex-start;
+      justify-content: flex-start;
       padding: 2rem;
+      height: calc(100vh - 80px);
       box-sizing: border-box;
-      /* Removed text centering so content aligns left */
     }
 
     section.hero article {
-      max-width: 600px;
-      font-family: Georgia, serif;
-      /* Removed background, padding, and border-radius to remove the box around the headline */
-      /* background: rgba(0, 0, 0, 0.5); */
-      /* padding: 1.5rem; */
-      /* border-radius: 10px; */
-      text-align: left; /* Align text to the left */
+      max-width: 700px;
+      width: 100%;
+      padding: 1rem 0;
+      text-align: left;
     }
 
-    /* Make the main headline much bigger for emphasis */
     .hero h1 {
-      font-size: 4em; /* Increase the size of the h1 text */
-      margin-bottom: 0.7em; /* Add some space below the headline */
-      text-align: left; /* Make sure the headline is left-aligned */
+      font-family: Georgia, serif;
+      font-size: 4em;
+      font-weight: normal;
+      margin-bottom: 0.5em;
+      text-align: left;
+    }
+
+    .hero p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 1.5em;
+      text-align: left;
     }
 
     .cta-button {
-      background-color: #8BD1CB; /* Changed button color to light blue */
+      background-color: #8BD1CB;
       color: white;
       padding: 0.8rem 1.5rem;
       border: none;
@@ -72,26 +89,82 @@
       font-size: 1rem;
       cursor: pointer;
       text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #6bbab5;
+    }
+
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 3em;
+      }
+
+      .hero p {
+        font-size: 1.1em;
+      }
     }
 
     @media (max-width: 768px) {
-      section.hero {
+      header {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
+      }
+
+      section.hero {
+        padding: 1.5rem;
+      }
+
+      section.hero article {
+        padding: 0;
+      }
+
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      .cta-button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 0.95em;
+      }
+
+      header {
+        padding: 1rem;
+      }
+
+      .cta-button {
+        font-size: 0.95rem;
+        padding: 0.7rem 1.2rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="img/cw_logo-2.png" alt="charity: water logo">
+    <img src="img/cw_logo-2.png" alt="charity: water logo" />
     <a class="sign-in" href="#">Sign In</a>
   </header>
 
   <section class="hero">
     <article>
       <h1>Give Clean Water. See Real Change.</h1>
-      <p>100% of your donation funds clean water projects - one click and you'll see exactly where your gift is changing lives.</p>
+      <p>100% of your donation funds clean water projects – one click and you'll see exactly where your gift is changing lives.</p>
       <a class="cta-button" href="#">Click now to change a life</a>
     </article>
   </section>

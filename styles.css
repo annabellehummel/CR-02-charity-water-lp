@@ -63,7 +63,7 @@ section {
 /* Make the headline bold and modern */
 .hero h1 {
   font-size: 2.5em;
-  font-weight: bold;
+  font-weight: normal;
   letter-spacing: 1px;
   margin-bottom: 15px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */

@@ -14,10 +14,6 @@
       padding: 0;
       height: 100%;
       font-family: 'Montserrat', sans-serif;
-      background-image: url('img/backgroundimage.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       background-color: #ffffff;
       color: #ffffff;
       box-sizing: border-box;
@@ -32,9 +28,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: rgba(255, 255, 255, 0.8);
-      position: relative;
-      z-index: 2;
+      background-color: #ffffff; /* Changed from rgba to solid white */
+      color: #333;
     }
 
     header img {
@@ -55,12 +50,19 @@
       padding: 2rem;
       height: calc(100vh - 80px);
       box-sizing: border-box;
+
+      background-image: url('img/backgroundimage.png'); /* Moved from body to here */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #ffffff;
     }
 
     section.hero article {
       max-width: 700px;
       width: 100%;
-      padding: 1rem 0;
+      padding: 0;
+      margin-top: 0;
       text-align: left;
     }
 
@@ -81,7 +83,7 @@
     }
 
     .cta-button {
-      background-color: #2E9DF7CB;
+      background-color: #1e8eebcb;
       color: white;
       padding: 0.8rem 1.5rem;
       border: none;
@@ -91,11 +93,11 @@
       text-decoration: none;
       display: inline-block;
       transition: background-color 0.3s ease;
-      margin-left: 20rem; /*  Add this line to move it right */
+      margin-left: 20rem; /* Adjust as needed */
     }
 
     .cta-button:hover {
-      background-color: #6bbab5;
+      background-color: #0d527a;
     }
 
     @media (max-width: 1024px) {
@@ -133,6 +135,7 @@
       .cta-button {
         width: 100%;
         max-width: 300px;
+        margin-left: 0;
       }
     }
 

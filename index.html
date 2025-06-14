@@ -5,17 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>charity: water - Give Clean Water</title>
 
-  <!-- Google Fonts fallback for Proxima Nova -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: 'Montserrat', sans-serif;
       background-color: #ffffff;
-      color: #ffffff;
       box-sizing: border-box;
     }
 
@@ -23,13 +21,16 @@
       box-sizing: inherit;
     }
 
+    /* Solid white header */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: #ffffff; /* Changed from rgba to solid white */
+      background-color: #ffffff;
       color: #333;
+      height: 80px;
+      z-index: 10;
     }
 
     header img {
@@ -43,17 +44,16 @@
       text-decoration: none;
     }
 
+    /* Hero section starts AFTER header and shows full background image from top */
     section.hero {
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
       padding: 2rem;
-      height: calc(100vh - 80px);
-      box-sizing: border-box;
-
-      background-image: url('img/backgroundimage.png'); /* Moved from body to here */
+      min-height: 100vh;
+      background-image: url('img/backgroundimage.png');
       background-size: cover;
-      background-position: center;
+      background-position: top center; /* 👈 key fix: show image from the top */
       background-repeat: no-repeat;
       color: #ffffff;
     }
@@ -62,7 +62,6 @@
       max-width: 700px;
       width: 100%;
       padding: 0;
-      margin-top: 0;
       text-align: left;
     }
 
@@ -71,7 +70,6 @@
       font-size: 5em;
       font-weight: normal;
       margin-bottom: 0.5em;
-      text-align: left;
     }
 
     .hero p {
@@ -79,11 +77,10 @@
       font-size: 1.2em;
       line-height: 1.6;
       margin-bottom: 1.5em;
-      text-align: left;
     }
 
     .cta-button {
-      background-color: #1e8eebcb;
+      background-color: #2E9DF7cb;
       color: white;
       padding: 0.8rem 1.5rem;
       border: none;
@@ -93,7 +90,7 @@
       text-decoration: none;
       display: inline-block;
       transition: background-color 0.3s ease;
-      margin-left: 20rem; /* Adjust as needed */
+      margin-left: 20rem;
     }
 
     .cta-button:hover {
@@ -114,14 +111,11 @@
       header {
         flex-direction: column;
         align-items: flex-start;
+        height: auto;
       }
 
       section.hero {
         padding: 1.5rem;
-      }
-
-      section.hero article {
-        padding: 0;
       }
 
       .hero h1 {
@@ -148,10 +142,6 @@
         font-size: 0.95em;
       }
 
-      header {
-        padding: 1rem;
-      }
-
       .cta-button {
         font-size: 0.95rem;
         padding: 0.7rem 1.2rem;
@@ -176,4 +166,3 @@
     </article>
   </section>
 </body>
-</html>
